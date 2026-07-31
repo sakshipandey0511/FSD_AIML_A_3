@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchronous Demo</title>
+    <script>
+       async function loaduserDetails(username){
+            try{
+                const url=`https://api.github.com/users/${username}`;
+                const res= await fetch(url);
+                const data= await res.json();
+                document.getElementById("#para1").innerText=data.login;
+                document.getElementById("#para1").style.color="blue";
+                document.getElementById("#para1").src=data.avatar_url;
+                console.log("Response:",data);
+
+            }
+            catch(err){
+                console.log("Error:",err);
+        }}
+        loaduserDetails("sakshipandey0511");
+ </script>
+ <body>
+    <h1> Github Profile info</h1>
+    <img id="#para1" src="" alt="User Avatar"></img>
+ </body>
+</head> 
+</html>
