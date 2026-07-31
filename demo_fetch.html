@@ -27,6 +27,8 @@
       <tr>
         <th>#</th>
         <th>Title</th>
+        <th>QR Code</th>
+        <th>Image</th>
         <th>Category</th>
         <th>Price</th>
         <th>Rating</th>
@@ -52,6 +54,8 @@
             <tr>
               <td>${index + 1}</td>
               <td>${item.title}</td>
+              <td><img src="https://api.qrserver.com/v1/create-qr-code/?data=${item.title}&size=100x100" alt="QR Code"></td>
+              <td><img src="${item.thumbnail}" alt="${item.title}" width="100"></td>
               <td>${item.category}</td>
               <td>₹${item.price}</td>
               <td>${item.rating}</td>
