@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Profile</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      background-color: #f2f2f2;
+    }
+
+    #profile {
+      width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+    }
+
+    .avatar {
+      width: 120px;
+      border-radius: 50%;
+    }
+
+    a {
+      color: blue;
+    }
+
+    .qr {
+      width: 100px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="profile">
+    <h2>GitHub Profile</h2>
+    <p>Loading...</p>
+  </div>
+
+  <script>
+    const profile = document.getElementById("profile");
+
+    const URL = "https://api.github.com/users/sakshipandey0511";
+
+    async function loadProfile() {
+      try {
+        const res = await fetch(URL);
+        const user = await res.json();
+
+        const qrURL =
+          `https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=${encodeURIComponent(user.html_url)}`;
+
+        profile.innerHTML = `
+          <h2>GitHub Profile</h2>
+
+          <img class="avatar" src="${user.avatar_url}">
+
+          <h3>${user.login}</h3>
+
+          <p>
+            <b>Repositories:</b> ${user.public_repos}
+          </p>
+
+          <p>
+            <b>Followers:</b> ${user.followers}
+          </p>
+
+          <p>
+            <b>Following:</b> ${user.following}
+          </p>
+
+          <p>
+            <a href="${user.html_url}" target="_blank">
+              Visit GitHub Profile
+            </a>
+          </p>
+
+          
+
+         
+        `;
+      }
+
+      catch (err) {
+        profile.innerHTML = "Error loading profile";
+        console.log(err);
+      }
+    }
+
+    loadProfile();
+  </script>
+
+</body>
+</html>
