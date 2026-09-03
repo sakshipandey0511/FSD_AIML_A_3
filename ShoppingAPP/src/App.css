@@ -1,0 +1,140 @@
+/* src/App.css - For your exact file names */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f3f4f6;
+}
+
+/* Header.jsx */
+.header {
+  background: #000000;
+  color: white;
+  text-align: center;
+  padding: 18px 0;
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* Navbar.jsx */
+.navbar {
+  background: #7f1d1d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 5%;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.navbar a:hover {
+  background: white;
+  color: #7f1d1d;
+}
+
+/* Home.jsx */
+.home {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 30px 3%;
+}
+
+/* Item.jsx */
+.item {
+  background: #ffedd5; /* your peach color but cleaner */
+  border: 2px solid #dc2626;
+  border-radius: 18px;
+  padding: 25px 15px;
+  text-align: center;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+  background: white;
+}
+
+.item img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 30px;
+}
+
+.item h3 {
+  color: #dc2626;
+  font-size: 22px;
+  margin-bottom: 15px;
+  font-family: Georgia, serif;
+}
+
+.item p {
+  color: #6b21a8;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.item button {
+  background: white;
+  border: 1px solid #333;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.item button:hover {
+  background: #111;
+  color: white;
+}
+
+/* Footer.jsx */
+.footer {
+  background: #111827;
+  color: #9ca3af;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+  .home {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .home {
+    grid-template-columns: 1fr;
+  }
+  .header {
+    font-size: 26px;
+  }
+  .navbar {
+    justify-content: center;
+    gap: 10px;
+  }
+}
