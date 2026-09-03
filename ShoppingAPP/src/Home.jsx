@@ -1,9 +1,8 @@
 import Item from './Item'
 
-const home = () => {
+const Home = () => {
   return (
     <div className='Home'>
-        <h2>Welcome to My Shopping App</h2>
         <Item/>
         <Item/>
         <Item/>
@@ -13,4 +12,4 @@ const home = () => {
   )
 }
 
-export default home
+export default Home
