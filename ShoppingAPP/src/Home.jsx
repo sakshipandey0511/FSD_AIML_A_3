@@ -3,11 +3,7 @@ import Item from './Item'
 const Home = () => {
   return (
     <div className='Home'>
-        <Item/>
-        <Item/>
-        <Item/>
-        <Item/>
-      
+       <Outlet/>
     </div>
   )
 }
